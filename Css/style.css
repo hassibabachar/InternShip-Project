@@ -1,7 +1,8 @@
 :root{
   --primary-color: #340244;
   --secondary-color: #680488;
-  --third-color: #0051a1;
+  --third-color: #7303c0;
+  --forth-color: #0051a1;
   --white-color: #ffffff;
 }
 * {
@@ -89,7 +90,7 @@ header nav ul li a {
   padding-bottom: 5px;
 }
 header nav ul li a:hover{ 
-  color: var(--secondary-color);
+  color: var(--third-color);
 } 
 header nav .icon  {
   width: 3rem;
@@ -111,7 +112,8 @@ header nav .open-nav{
   width: 2rem;
   height: 2rem;
   place-items: center;
-  background-color: transparent;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
 }
 header nav .open-nav i{
   width: 80%;
@@ -124,7 +126,7 @@ header nav .close-nav{
   width: 2rem;
   height: 2rem;
   place-items: center;
-  background-color: transparent;
+  background-color: var(--secondary-color);
 }
 header nav .close-nav i{
   width: 80%;
@@ -133,7 +135,7 @@ header nav .close-nav i{
   font-size: 1.5rem;
   cursor: pointer;
 }
-@media screen and (max-width: 1024px) {
+@media (max-width: 767px) {
   header nav button {
       display: block;
       cursor: pointer;
@@ -143,6 +145,9 @@ header nav .close-nav i{
   }
   header nav button.close-nav {
       display: none;
+  }
+  header nav ul{
+    display: none;
   }
 }
 /* ================================================================== */
@@ -162,15 +167,18 @@ header nav .close-nav i{
   justify-content: center;
   align-items: center;
 }
+.landingPage .container .landingPage__titleAndDes .Loginsignup{
+  align-items: center;
+  margin-top: 25px;
+}
 .landingPage__title {
   position: relative;
   font-size: 2rem;
-  margin-bottom: 2.5rem;
   font-weight: 400;
 }
 .landingPage__description {
   font-size: 1.25;
-  margin-bottom: 4rem;
+  letter-spacing: 14;
 }
 .landingPage__image{
   display: block;
@@ -179,7 +187,6 @@ header nav .close-nav i{
 .landingPage .go-down {
   font-size: 2rem;
   color: var(--secondary-color);
-  position: absolute;
   bottom: 5rem;
   left: 50%;
 }
@@ -200,6 +207,18 @@ header nav .close-nav i{
     transform: translateY(-10px);
   }
 }
+.pay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+.pay .container {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
 /* ================================================================== */
 /*                  footer  */
 /* ================================================================== */
@@ -209,21 +228,13 @@ header nav .close-nav i{
     margin-top: 10rem;
 }
 .footer .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 50px;
+  display: flex;
+  justify-content: space-evenly;
 }
 .footer .box h1 {
   color: #ffffff;
   font-size: 30px;
   margin: 0 0 20px;
-}
-.footer .box .text {
-  line-height: 1.5;
-  color: var(--white-color);
-}
-.footer .box .text span{
-  font-weight: bold;
 }
 .footer .box .social {
   display: flex;
@@ -264,5 +275,11 @@ header nav .close-nav i{
   }
   .footer .box .line {
     flex-direction: column;
+  }
+  .footer .container{
+    flex-direction: column;
+  }
+  .footer .box .line{
+    flex-direction: row;
   }
 }
