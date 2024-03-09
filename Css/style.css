@@ -52,11 +52,6 @@ header .container {
   align-items: center;
   height: 5.5rem;
 }
-@media screen and (max-width: 767px) {
-  header .container {
-      height: 3.5rem;
-  }
-}
 header nav{
   display: flex;
   align-items: center;
@@ -82,7 +77,20 @@ header nav ul li .active,
 header nav ul li a:hover{ 
   color: var(--third-color);
   transition: .3s;
-} 
+}
+@media screen and (max-width: 1024px) {
+  header nav ul li{
+    display: none;
+}
+}
+/* @media screen and (max-width: 767px){
+  header .container {
+    height: 3.5rem;
+}
+  header nav ul li{
+    display: none;
+}
+} */
 /* ================================================================== */
 /*                  App  */
 /* ================================================================== */
@@ -90,7 +98,7 @@ header nav ul li a:hover{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 5.5rem;
+  /* margin-top: 5.5rem; */
   height: 100vh;
 }
 #App .container{
@@ -138,13 +146,30 @@ header nav ul li a:hover{
   justify-content: center;
   gap: 1.5rem;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 #App .downloadApp img{
   width: 150px;
   height: 50px;
   border-radius: 10px;
   cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  #App{
+    margin-top: 9rem;
+  }
+  #App .container{
+    flex-direction: column;
+  }
+  #App .container .Describtion{
+    width: fit-content;
+  }
+  /* #App .container .image{
+    flex: 1;
+  } */
+  #App .downloadApp{
+    margin-bottom: 4rem;
+}
 }
 /* ================================================================== */
 /*                  companies  */
@@ -158,6 +183,7 @@ header nav ul li a:hover{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
 }
 .companies img{
   max-width: 120px;
@@ -216,6 +242,18 @@ header nav ul li a:hover{
   width: 6rem;
   height: 2rem;
 }
+@media screen and (max-width: 1024px){
+  #Pay .container{
+  justify-content: center;
+  flex-direction: column;
+  }
+  #Pay .container .Describtion{
+    width: fit-content;
+  }
+  #Pay .container .image img{
+    width: fit-content;
+  }
+}
 /* ================================================================== */
 /*                  cards  */
 /* ================================================================== */
@@ -228,6 +266,7 @@ header nav ul li a:hover{
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: 100vw;
 }
 .cards img{
   max-width: 120px;
@@ -282,6 +321,19 @@ header nav ul li a:hover{
   cursor: pointer;
   width: 12rem;
   height: 2rem;
+}
+@media screen and (max-width: 1024px){
+  #Pos .container{
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 4rem;
+  }
+  #Pos .container .Describtion{
+    width: fit-content;
+  }
+  #Pos .container .image img{
+    width: fit-content;
+  }
 }
 /* ================================================================== */
 /*                  Developers  */
@@ -338,7 +390,18 @@ header nav ul li a:hover{
   width: 12rem;
   height: 2rem;
 }
-
+@media screen and (max-width: 1024px){
+  #Developers .container{
+  justify-content: center;
+  flex-direction: column;
+  }
+  #Developers .container .Describtion{
+    width: fit-content;
+  }
+  #Developers .container .image img{
+    width: fit-content;
+  }
+}
 /* ================================================================== */
 /*                  About  */
 /* ================================================================== */
@@ -388,6 +451,18 @@ header nav ul li a:hover{
   cursor: pointer;
   width: 6rem;
   height: 2rem;
+}
+@media screen and (max-width: 1024px){
+  #About .container{
+  justify-content: center;
+  flex-direction: column;
+  }
+  #About .container .Describtion{
+    width: fit-content;
+  }
+  #About .container .image img{
+    width: fit-content;
+  }
 }
 /* ================================================================== */
 /*                  footer  */
@@ -449,5 +524,135 @@ header nav ul li a:hover{
   }
   .footer .box .line{
     flex-direction: row;
+  }
+}
+
+/* ================================================================== */
+/*                  about file  */
+/* ================================================================== */
+.lines{
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  padding: 1rem;
+  height: 6rem;
+}
+.lines .container{
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  width: 100vw;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.lines .container h1{
+  text-align: center;
+  color: var(--white-color);
+}
+#general{
+  display: flex;
+  flex-direction: row;
+}
+#general .cont{
+  display: flex;
+  flex-direction: row;
+  margin-top: 9rem;
+}
+#general .cont .left-content{
+  margin-top: 9rem;
+  width: 100%;
+}
+#general .cont .right-content{
+  width: 100%;
+}
+#general .cont .titel{
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  width: 100%;
+  height: 6rem;
+  padding: 1.5rem 0 1.5rem 0;
+}
+#general .cont .titel h1{
+  color: var(--white-color);
+  font-size: 2rem;
+  text-align: center;
+}
+#general .cont .content{
+  padding: 5rem 5rem 0 5rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+#general .cont .image img{
+  height: 40rem;
+  width: 40rem;  
+  padding: 5rem;
+  margin: 12px;
+}
+#values {
+  width: 100vw;
+  padding: 5rem 0 5rem 0;
+}
+#values .container .boxes{
+  display: flex;
+  justify-content: space-evenly;
+}
+#values .container .box{
+  padding: 15px;
+  text-align: center;
+  border-radius: 22px;
+  width: 17rem;
+  border: 2px  solid  var(--secondary-color) ;
+}
+#values .container .boxes h1{
+  color: var(--forth-color);
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+#values .container .boxes p{
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: .7rem;
+  padding: 0 1rem ;
+}
+#partners {
+  padding: 5rem 0 5rem 0;
+  width: 100vw;
+}
+#partners .container{
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+#partners .container img{
+  margin-left: 22px;
+}
+#leaders {
+  padding: 5rem 0 5rem 0;
+  width: 100vw;
+}
+#leaders .container{
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+#leaders .container .leader{
+  text-align: center;
+}
+#leaders .container img{
+  padding: 4px;
+  border-radius: 50%;
+  border: 3px solid var(--secondary-color);
+}
+#leaders .container .leader h2{
+  color: var(--third-color);
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+#leaders .container .leader p{
+  color: var(--forth-color);
+  margin-top: .5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+@media (max-width: 767px) {
+  #values .container .boxes{
+    flex-direction: column;
   }
 }
