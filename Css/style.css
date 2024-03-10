@@ -23,7 +23,7 @@
 .container{
   width: 88%;
   max-width: 1800px;
-  margin-inline: auto;
+  /* margin-inline: auto; */
 }
 @media screen and (max-width: 1024px) {
   .container{
@@ -45,6 +45,7 @@ header {
   left: 0;
   width: 100vw;
   z-index: 999;
+  padding: .5rem;
 }
 header .container {
   display: flex;
@@ -57,9 +58,12 @@ header nav{
   align-items: center;
   height: 100%;
 } 
-header .logo h1 {
+header .logo {
   color: var(--secondary-color);
   cursor: pointer;
+}
+header .logo img{
+  padding: 2rem;
 }
 header nav ul {
   display: flex;
@@ -83,6 +87,24 @@ header nav ul li a:hover{
     display: none;
 }
 }
+header .container .links .btn button{
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: 25px;
+  cursor: pointer;
+  width: 7rem;
+  height: 2.5rem;
+  font-size: 17px;
+  font-weight: 400;
+}
+header .container .links .btn button i{
+  margin-left: 8px;
+}
+header .container .links .img img{
+  color: var(--secondary-color);
+  width: 2rem; 
+  height: 2rem;
+}
 /* @media screen and (max-width: 767px){
   header .container {
     height: 3.5rem;
@@ -99,7 +121,7 @@ header nav ul li a:hover{
   justify-content: center;
   flex-direction: column;
   /* margin-top: 5.5rem; */
-  height: 100vh;
+  height: 90vh;
 }
 #App .container{
   display: flex;
@@ -194,7 +216,7 @@ header nav ul li a:hover{
 #Pay{
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
 }
 #Pay .container{
   display: flex;
@@ -277,7 +299,7 @@ header nav ul li a:hover{
 #Pos{
   display: flex;
   justify-content: center;
-  height: 100vh;
+  /* height: 80vh; */
 }
 #Pos .container{
   display: flex;
@@ -343,7 +365,7 @@ header nav ul li a:hover{
   display: flex;
   justify-content: center;
   margin-top: 5.5rem;
-  height: 100vh;
+  height: 80vh;
 }
 #Developers .container{
   display: flex;
@@ -476,19 +498,41 @@ header nav ul li a:hover{
   margin-bottom: 5rem;
   justify-content: space-evenly;
 }
-.footer .box .line {
+.footer .container .allReferences{
+  display: flex;
+  flex-direction: column;
+}
+.footer .container .allReferences h2{
+  color: var(--white-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.footer .container .allReferences .references{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+.footer .container .allReferences .references a{
+  color: #eee;
+  font-size: 1rem;
+  transition: .3s;
+}
+.footer .container .allReferences .references a:hover{
+  text-decoration: underline;
+}
+.footer .line {
   display: flex;
   align-items: center;
   color: var(--white-color);
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
 }
-.footer .box .line i {
+.footer .line i {
   font-size: 25px;
   color: var(--white-color);
   margin-right: 1rem;
 }
 .footer .copyright {
-  padding: 25px 0;
+  padding: 2rem 0 0 0;
   text-align: center;
   display: flex;
   justify-content: space-around;
@@ -496,7 +540,7 @@ header nav ul li a:hover{
 }
 .footer .copyright p {
   align-items: center;
-  padding: 12px;
+  padding: 1rem;
 }
 .footer .copyright .social {
   display: flex;
@@ -526,7 +570,6 @@ header nav ul li a:hover{
     flex-direction: row;
   }
 }
-
 /* ================================================================== */
 /*                  about file  */
 /* ================================================================== */
@@ -655,4 +698,63 @@ header nav ul li a:hover{
   #values .container .boxes{
     flex-direction: column;
   }
+}
+#worldwide{
+  padding: 10rem;
+}
+#worldwide .container{
+   display: flex;
+   justify-content: space-around;
+}
+#worldwide .container .Country{
+  text-align: center;
+}
+#worldwide .container .Country h1{
+  color: var(--third-color);
+  margin-bottom: .5rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+#worldwide .container .Country p{
+  line-height: 1.5;
+  color: var(--forth-color);
+  font-size: 1.3rem;
+}
+
+/* ================================================================== */
+/*                  login file  */
+/* ================================================================== */
+.form  {
+  /* align-items: center; */
+}
+.form form{
+  padding: 2rem;
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 20rem;
+}
+.form form h2{
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.form form label{
+}
+.form form input{
+  text-align: start;
+}
+footer {
+  padding: 70px 0 0 ;
+}
+footer .container {
+  display: flex;
+  /* margin-bottom: 5rem; */
+  /* justify-content: space-evenly; */
+}
+.form form button{
+  padding: .8rem;
+  color: var(--white-color);
+  background-color: #c29acf;
 }
