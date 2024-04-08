@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt@-10..0&display=swap');
+/* global */
 :root{
-  --primary-color: #340244;
+  --primary-color: #4A0360;
   --secondary-color: #680488;
   --third-color: #7303c0;
   --forth-color: #0051a1;
   --white-color: #ffffff;
+  --body-font: "Inter", sans-serif;
 }
 *{
   box-sizing: border-box;
@@ -12,38 +15,130 @@
   text-decoration: none;
   border: none;
   outline: none;
-  list-style: none;
+  /* list-style: none; */
+}
+body{
+  font-family: var(--body-font);
 }
 ::selection{
-  background-color: black;
+  background-color: #ab9cab;
 }
 /* *{ 
-  border: 1px  solid  red ;
+  border: 1px  solid  var(--forth-color) ;
 } */
 .container{
-  width: 88%;
+  width: 95%;
   max-width: 1800px;
-  /* margin-inline: auto; */
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.contents{
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+.Describtion{
+  width: 35%;
+}
+h3{
+  color: var(--forth-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+h1{
+  font-size: 2rem;
+  font-weight: 500;
+}
+p{
+  margin-top: 1rem;
+  line-height: 1.5rem;
+}
+.Describtion h1 span{
+  color: var(--third-color);
+}
+.more{
+  color: var(--third-color);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.more:hover{
+  text-decoration: underline;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: .5rem;
+}
+.btn button{
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  margin-top: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 6rem;
+  height: 2rem;
+}
+/* make the website responsive */
 @media screen and (max-width: 1024px) {
   .container{
     width: 74%;
+  }
+  header nav ul li{
+    display: none;
+  }
+  .Describtion{
+    width: fit-content;
+    margin-top: 5rem;
+  }
+  #App{
+    margin-top: 9rem;
+  }
+  .contents .container{
+    justify-content: center;
+    flex-direction: column;
+  }
+  #App .container{
+    flex-direction: column-reverse;
+  }
+  #App .downloadApp{
+    margin-bottom: 4rem;
+  }
+  #Pos .container{
+    flex-direction: column-reverse;
+  }
+  #About .container{
+    flex-direction: column-reverse;
   }
 }
 @media screen and (max-width: 767px) {
   .container {
     width: 98%;
   }
+  .footer {
+    text-align: center;
+  }
+  .footer .box .line {
+    flex-direction: column;
+  }
+  .footer .container{
+    flex-direction: column;
+  }
+  .footer .box .line{
+    flex-direction: row;
+  }
 }
-/* ================================================================== */
-/*                  NAV BAR */
-/* ================================================================== */
+/* home page */
 header {
   background-color: var(--white-color);
+  box-shadow: 0 0 12px hsla(220, 32%, 8%, .3);
+  border-radius:0 0 1rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 999;
   padding: .5rem;
 }
@@ -51,20 +146,16 @@ header .container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 5.5rem;
+  height: 5rem;
+}
+header .logo {
+  cursor: pointer;
 }
 header nav{
   display: flex;
   align-items: center;
   height: 100%;
 } 
-header .logo {
-  color: var(--secondary-color);
-  cursor: pointer;
-}
-header .logo img{
-  padding: 2rem;
-}
 header nav ul {
   display: flex;
   align-items: center;
@@ -72,22 +163,9 @@ header nav ul {
 }
 header nav ul li {
   width: 6.5rem;
+  list-style: none;
 }
-header nav ul li a {
-  color: black;
-  font-size: 1.3rem;
-}
-header nav ul li .active,
-header nav ul li a:hover{ 
-  color: var(--third-color);
-  transition: .3s;
-}
-@media screen and (max-width: 1024px) {
-  header nav ul li{
-    display: none;
-}
-}
-header .container .links .btn button{
+header .container .links .button button{
   background-color: var(--secondary-color);
   color: var(--white-color);
   border-radius: 25px;
@@ -101,74 +179,34 @@ header .container .links .btn button i{
   margin-left: 8px;
 }
 header .container .links .img img{
-  color: var(--secondary-color);
-  width: 2rem; 
   height: 2rem;
 }
-/* @media screen and (max-width: 767px){
-  header .container {
-    height: 3.5rem;
+/* header .container nav .nav_toggle{
+  position: relative;
+  width: 2rem;
+  height: 2rem;
 }
-  header nav ul li{
-    display: none;
-}
+header .container nav .nav_toggle i{
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity .1s, trasform .4s;
 } */
-/* ================================================================== */
-/*                  App  */
-/* ================================================================== */
 #App{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* margin-top: 5.5rem; */
-  height: 90vh;
-}
-#App .container{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-#App .container .Describtion{
-  width: 35%;
-}
-#App .container .Describtion h3{
-  color: var(--forth-color);
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#App .container .Describtion h1{
-  font-size: 3rem;
-  font-weight: 500;
-}
-#App .container .Describtion p{
-  margin-top: 1rem;
-}
-#App .container .Describtion .more{
-  color: var(--third-color);
-  cursor: pointer;
-  margin-top: 1rem;
-}
-#App .container .Describtion .btn{
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-  margin-top: 1.5rem;
-}
-#App .container .Describtion .btn button{
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  margin-top: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  width: 6rem;
-  height: 2rem;
+  margin-top: 2.5rem;
 }
 #App .downloadApp{
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 4rem;
-  /* margin-bottom: 4rem; */
 }
 #App .downloadApp img{
   width: 150px;
@@ -176,327 +214,47 @@ header .container .links .img img{
   border-radius: 10px;
   cursor: pointer;
 }
-@media screen and (max-width: 1024px) {
-  #App{
-    margin-top: 9rem;
-  }
-  #App .container{
-    flex-direction: column;
-  }
-  #App .container .Describtion{
-    width: fit-content;
-  }
-  /* #App .container .image{
-    flex: 1;
-  } */
-  #App .downloadApp{
-    margin-bottom: 4rem;
-}
-}
-/* ================================================================== */
-/*                  companies  */
-/* ================================================================== */
 .companies{
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   padding: 1rem;
-}
-.companies .container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
+  margin: 4rem 0;
 }
 .companies img{
   max-width: 120px;
 }
-/* ================================================================== */
-/*                  pay  */
-/* ================================================================== */
-#Pay{
-  display: flex;
-  justify-content: center;
-  height: 80vh;
-}
-#Pay .container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 #Pay .container .image img{
   width: 90%;
 }
-#Pay .container .Describtion{
-  width: 50%;
-}
-#Pay .container .Describtion h3{
-  color: var(--forth-color);
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#Pay .container .Describtion h1{
-  font-size: 3rem;
-  font-weight: 500;
-}
-#Pay .container .Describtion h1 span{
-  color: var(--third-color);
-}
-#Pay .container .Describtion p{
-  margin-top: 1rem;
-}
-#Pay .container .Describtion .more{
-  color: var(--third-color);
-  cursor: pointer;
-  margin-top: 1rem;
-}
-#Pay .container .Describtion .btn{
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-  margin-top: 1.5rem;
-}
-#Pay .container .Describtion .btn button{
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  margin-top: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  width: 6rem;
-  height: 2rem;
-}
-@media screen and (max-width: 1024px){
-  #Pay .container{
-  justify-content: center;
-  flex-direction: column;
-  }
-  #Pay .container .Describtion{
-    width: fit-content;
-  }
-  #Pay .container .image img{
-    width: fit-content;
-  }
-}
-/* ================================================================== */
-/*                  cards  */
-/* ================================================================== */
-.cards{
-  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  padding: 1rem;
-}
-.cards .container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100vw;
-}
-.cards img{
-  max-width: 120px;
-}
-/* ================================================================== */
-/*                  Pos  */
-/* ================================================================== */
-#Pos{
-  display: flex;
-  justify-content: center;
-  /* height: 80vh; */
-}
-#Pos .container{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-#Pos .container .Describtion{
-  width: 35%;
-}
-#Pos .container .Describtion h3{
-  color: var(--forth-color);
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#Pos .container .Describtion h1{
-  font-size: 3rem;
-  font-weight: 500;
-}
-#Pos .container .Describtion h1 span{
-  color: var(--third-color);
-}
-#Pos .container .Describtion p{
-  margin-top: 1rem;
-}
-#Pos .container .Describtion .more{
-  color: var(--third-color);
-  cursor: pointer;
-  margin-top: 1rem;
-}
-#Pos .container .Describtion .btn{
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
 #Pos .container .Describtion .btn button{
-  background-color: var(--secondary-color);
-  color: var(--white-color);
   align-items: center;
-  margin-top: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
   width: 12rem;
-  height: 2rem;
 }
-@media screen and (max-width: 1024px){
-  #Pos .container{
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 4rem;
-  }
-  #Pos .container .Describtion{
-    width: fit-content;
-  }
-  #Pos .container .image img{
-    width: fit-content;
-  }
-}
-/* ================================================================== */
-/*                  Developers  */
-/* ================================================================== */
 #Developers{
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  display: flex;
-  justify-content: center;
-  margin-top: 5.5rem;
-  height: 80vh;
-}
-#Developers .container{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-#Developers .container .image img{
-  width: 100%;
-}
-#Developers .container .Describtion{
-  width: 30%;
 }
 #Developers .container .Describtion h3{
   color: #c29acf;
-  font-size: 1.5rem;
-  font-weight: 500;
 }
 #Developers .container .Describtion h1{
   color: var(--white-color);
-  font-size: 3rem;
-  font-weight: 500;
 }
 #Developers .container .Describtion p{
   color: var(--white-color);
-  margin-top: 1rem;
-}
-#Developers .container .Describtion .more{
-  color: #c29acf;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-#Developers .container .Describtion .btn{
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
 }
 #Developers .container .Describtion .btn button{
   background-image:  linear-gradient(to right, var(--forth-color), var(--third-color)) ;
-  color: var(--white-color);
   align-items: center;
-  margin-top: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
   width: 12rem;
-  height: 2rem;
-}
-@media screen and (max-width: 1024px){
-  #Developers .container{
-  justify-content: center;
-  flex-direction: column;
-  }
-  #Developers .container .Describtion{
-    width: fit-content;
-  }
-  #Developers .container .image img{
-    width: fit-content;
-  }
-}
-/* ================================================================== */
-/*                  About  */
-/* ================================================================== */
-#About{
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-}
-#About .container{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
 #About .container .image img{
-  width: 90%;
+  width: 80%;
 }
-#About .container .Describtion{
-  width: 35%;
-}
-#About .container .Describtion h3{
-  color: var(--forth-color);
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#About .container .Describtion h1{
-  font-size: 3rem;
-  font-weight: 500;
-}
-#About .container .Describtion p{
-  margin-top: 1rem;
-}
-#About .container .Describtion .more{
-  color: var(--third-color);
-  cursor: pointer;
-  margin-top: 1rem;
-}
-#About .container .Describtion .btn{
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-#About .container .Describtion .btn button{
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  margin-top: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  width: 6rem;
-  height: 2rem;
-}
-@media screen and (max-width: 1024px){
-  #About .container{
-  justify-content: center;
-  flex-direction: column;
-  }
-  #About .container .Describtion{
-    width: fit-content;
-  }
-  #About .container .image img{
-    width: fit-content;
-  }
-}
-/* ================================================================== */
-/*                  footer  */
-/* ================================================================== */
 .footer {
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  padding: 70px 0 0 ;
+  padding: 4rem 0 0 0;
 }
 .footer .container {
-  display: flex;
-  margin-bottom: 5rem;
-  justify-content: space-evenly;
+  margin-bottom: 4rem;
 }
 .footer .container .allReferences{
   display: flex;
@@ -505,12 +263,12 @@ header .container .links .img img{
 .footer .container .allReferences h2{
   color: var(--white-color);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 .footer .container .allReferences .references{
   display: flex;
   flex-direction: column;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .footer .container .allReferences .references a{
   color: #eee;
@@ -533,18 +291,22 @@ header .container .links .img img{
 }
 .footer .copyright {
   padding: 2rem 0 0 0;
-  text-align: center;
   display: flex;
   justify-content: space-around;
   background-color: var(--white-color);
 }
+.footer .copyright img{
+  margin-bottom: 20px;
+}
 .footer .copyright p {
-  align-items: center;
   padding: 1rem;
 }
 .footer .copyright .social {
   display: flex;
   justify-content: space-between;
+}
+.footer .copyright .social li{
+  list-style: none;
 }
 .footer .copyright .social li a {
   color: #313131;
@@ -556,23 +318,7 @@ header .container .links .img img{
   border-radius: 50%;
   font-size: 25px;
 }
-@media (max-width: 767px) {
-  .footer {
-    text-align: center;
-  }
-  .footer .box .line {
-    flex-direction: column;
-  }
-  .footer .container{
-    flex-direction: column;
-  }
-  .footer .box .line{
-    flex-direction: row;
-  }
-}
-/* ================================================================== */
-/*                  about file  */
-/* ================================================================== */
+/* about page */
 .lines{
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   padding: 1rem;
@@ -600,16 +346,16 @@ header .container .links .img img{
 }
 #general .cont .left-content{
   margin-top: 9rem;
-  width: 100%;
+  width: 50%;
 }
 #general .cont .right-content{
-  width: 100%;
+  width: 50%;
 }
 #general .cont .titel{
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   width: 100%;
   height: 6rem;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 0 ;
 }
 #general .cont .titel h1{
   color: var(--white-color);
@@ -628,12 +374,13 @@ header .container .links .img img{
   margin: 12px;
 }
 #values {
-  width: 100vw;
+  /* width: 100vw; */
   padding: 5rem 0 5rem 0;
 }
 #values .container .boxes{
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3rem;
 }
 #values .container .box{
   padding: 15px;
@@ -655,7 +402,7 @@ header .container .links .img img{
 }
 #partners {
   padding: 5rem 0 5rem 0;
-  width: 100vw;
+  width: 100%;
 }
 #partners .container{
   display: flex;
@@ -663,20 +410,22 @@ header .container .links .img img{
   padding: 2rem;
 }
 #partners .container img{
-  margin-left: 22px;
+  margin-left: 1.5rem;
 }
 #leaders {
   padding: 5rem 0 5rem 0;
-  width: 100vw;
+  width: 100%;
 }
 #leaders .container{
   display: flex;
   justify-content: center;
   padding: 2rem;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 #leaders .container .leader{
   text-align: center;
+  height: 20rem;
+  width: 20rem;
 }
 #leaders .container img{
   padding: 4px;
@@ -701,6 +450,21 @@ header .container .links .img img{
 }
 #worldwide{
   padding: 10rem;
+  position: relative;
+}
+#worldwide:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url('../assets/images/globe.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 #worldwide .container{
    display: flex;
@@ -722,39 +486,83 @@ header .container .links .img img{
 }
 
 /* ================================================================== */
-/*                  login file  */
+/*                  ePay file  */
 /* ================================================================== */
-.form  {
-  /* align-items: center; */
+.pay{
+  padding-top: 10rem;
 }
-.form form{
-  padding: 2rem;
-  /* align-items: center; */
-  display: flex;
+.pay .container .Describtion h1{
+  color: var(--primary-color);
+  font-size: 4rem;
+  font-weight: bold;
+}
+.pay .container .Describtion h2{
+  color: var(--primary-color);
+  margin-top: .5rem;
+  font-size: 3rem;
+}
+.pay .container .image{
+  width: 50%;
+  max-width: 100%;
+  margin-left: 4rem;
+}
+.checkout{
   flex-direction: column;
-  width: 40rem;
-  height: 20rem;
 }
-.form form h2{
-  text-align: center;
+.checkout .container{
+  gap: 2rem;
+}
+.checkout .container .Describtion h2{
   font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+.checkout .container .Describtion h3{
+  font-size: 1.2rem;
+}
+.checkout .container .image{
+  width: 85%;
+}
+.checkout .more{
+  text-align: center;
+}
+.Solution .container{
+  flex-direction: column;
+}
+.title{
   margin-bottom: 2rem;
 }
-.form form label{
+.title h2{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 200;
 }
-.form form input{
-  text-align: start;
+.title h3{
+  text-align: center;
+  margin-top: 1.5rem;
 }
-footer {
-  padding: 70px 0 0 ;
-}
-footer .container {
+.Solution .business{
   display: flex;
-  /* margin-bottom: 5rem; */
-  /* justify-content: space-evenly; */
 }
-.form form button{
-  padding: .8rem;
-  color: var(--white-color);
-  background-color: #c29acf;
+.Solution .business ul{
+  padding: 10rem 2rem;
+}
+.Solution .business ul li{
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+.cards .container{
+  flex-direction: column;
+}
+.cards .container .images{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.cards .container .images img{
+  width: 17rem;
+}
+.cards .container p {
+  text-align: center;
 }
